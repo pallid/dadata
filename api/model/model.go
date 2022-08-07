@@ -282,12 +282,25 @@ type (
 		} `json:"management"`
 		Founders []*struct {
 			Ogrn string `json:"ogrn"`
-			Inn string `json:"inn"`
+			Inn  string `json:"inn"`
 			Name string `json:"name"`
-			Hid string `json:"hid"`
-			Type string `json:"type"`			
+			Hid  string `json:"hid"`
+			Type string `json:"type"`
 		} `json:"founders"`
-		Managers    string             `json:"managers"`
+		Managers []*struct {
+			Inn string `json:"inn"`
+			Fio *struct {
+				Surname        string      `json:"surname"`    // Фамилия
+				Name           string      `json:"name"`       // Имя
+				Patronymic     string      `json:"patronymic"` // Отчество
+				Gender         string      `json:"gender"`     // Пол
+				QualityCodeRaw interface{} `json:"qc"`         // Код качества
+				Source         string      `json:"source"`     // Исходное ФИО одной строкой
+			} `json:"fio"`
+			Post string `json:"post"`
+			Hid  string `json:"hid"`
+			Type string `json:"type"`
+		} `json:"managers"`
 		BranchType  string             `json:"branch_type"`
 		BranchCount int                `json:"branch_count"`
 		Source      string             `json:"source"`
