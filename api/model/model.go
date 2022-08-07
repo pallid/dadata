@@ -330,12 +330,12 @@ type (
 			Code string `json:"code"`
 			Name string `json:"name"`
 		} `json:"okveds"`
-		Authorities string           `json:"authorities"`
-		Documents   string           `json:"documents"`
-		Licenses    string           `json:"licenses"`
+		Authorities interface{}      `json:"authorities"`
+		Documents   interface{}      `json:"documents"`
+		Licenses    interface{}      `json:"licenses"`
 		Address     *AddressResponse `json:"address"`
-		Phones      string           `json:"phones"`
-		Emails      string           `json:"emails"`
+		Phones      interface{}      `json:"phones"`
+		Emails      interface{}      `json:"emails"`
 		OgrnDate    int64            `json:"ogrn_date"`
 		OkvedType   string           `json:"okved_type"`
 	}
