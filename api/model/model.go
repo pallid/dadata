@@ -274,8 +274,8 @@ type (
 
 	// Party base struct for dadata.Party (rus Организация)
 	Party struct {
-		Kpp        string `json:"kpp"`
-		Capital    string `json:"capital"`
+		Kpp        string      `json:"kpp"`
+		Capital    interface{} `json:"capital"`
 		Management *struct {
 			Name string `json:"name"`
 			Post string `json:"post"`
